@@ -23,5 +23,12 @@ namespace myGameTest {
             
         }
 
+        public string DidDamage() {
+            string output;
+
+            output = "You did" + CurrentPlayer().DoDamage().ToString() + " Damage \n";
+
+            return output;
+        }
     }
 }

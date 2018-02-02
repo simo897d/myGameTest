@@ -26,6 +26,8 @@ namespace myGameTest {
 
         }
         private void Btn_Attack_Click(object sender, EventArgs e) {
+            viewModel.CurrentPlayer().DoDamage();
+            richTextBox1.AppendText(viewModel.DidDamage());
         }
 
         private void label1_Click_1(object sender, EventArgs e) {

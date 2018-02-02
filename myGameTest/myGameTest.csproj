@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CombatSystem\PlayerCombat.cs" />
     <Compile Include="Model\Items\InventoryItem.cs" />
     <Compile Include="Model\Items\Swords.cs" />
     <Compile Include="Model\Items\Weapons.cs" />

@@ -205,7 +205,6 @@ namespace myGameTest {
             InitializeComponent();
             Lbl_HitPointsHealth.DataBindings.Add("Text", viewModel.CurrentPlayer(), "CurrentHitPoints");
             dgv_Inventory.DataSource = viewModel.CurrentPlayer().ListOfInventory;
-            
 
         }
 
