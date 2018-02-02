@@ -36,6 +36,7 @@ namespace myGameTest {
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgv_Inventory = new System.Windows.Forms.DataGridView();
+            this.RTB_Map = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,11 +164,21 @@ namespace myGameTest {
             this.dgv_Inventory.TabIndex = 11;
             this.dgv_Inventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Inventory_CellContentClick);
             // 
+            // RTB_Map
+            // 
+            this.RTB_Map.Location = new System.Drawing.Point(321, 138);
+            this.RTB_Map.Name = "RTB_Map";
+            this.RTB_Map.ReadOnly = true;
+            this.RTB_Map.Size = new System.Drawing.Size(288, 248);
+            this.RTB_Map.TabIndex = 12;
+            this.RTB_Map.Text = "";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 682);
+            this.Controls.Add(this.RTB_Map);
             this.Controls.Add(this.dgv_Inventory);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label5);
@@ -200,6 +211,7 @@ namespace myGameTest {
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private DataGridView dgv_Inventory;
+        private RichTextBox RTB_Map;
 
         public MainView() {
             InitializeComponent();

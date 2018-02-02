@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using myGameTest.Model;
-using myGameTest.Model.Items;
 
 namespace myGameTest {
     public class ViewModel {
+        public ViewModel() {
+
+        }
 
         private Player _player;
         private Monster _monster;
@@ -22,20 +24,22 @@ namespace myGameTest {
         public Monster SetMonster { get { return _monster; } set { _monster = value; } }
 
         public Monster MonsterEncounter() {
-            _monster = Monster.Slime();
             return _monster;
         }
 
-        public ViewModel() {
-            
-        }
 
         public string DidDamage() {
             string output;
-
-            output = "You did " + CurrentPlayer().DoDamage().ToString() + " damage to" + MonsterEncounter().CreatureName + "\n";
-
+            if (MonsterEncounter() == null) {
+                output = "You're not in combat \n";
+            } else {
+                output = "You did " + CurrentPlayer().DoDamage().ToString() + " damage to" + MonsterEncounter().CreatureName + "\n";
+            }
             return output;
+        }
+
+        public void MovePlayer() {
+
         }
     }
 }

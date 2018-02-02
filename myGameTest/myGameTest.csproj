@@ -49,8 +49,10 @@
     <Compile Include="Model\Items\InventoryItem.cs" />
     <Compile Include="Model\Items\Swords.cs" />
     <Compile Include="Model\Items\Weapons.cs" />
-    <Compile Include="Model\Monster.cs" />
-    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\LivingThings\Monster.cs" />
+    <Compile Include="Model\LivingThings\Player.cs" />
+    <Compile Include="Model\MapNLocations\PlayerMovement.cs" />
+    <Compile Include="Model\MapNLocations\TownCenter.cs" />
     <Compile Include="TempData\TempDatabase.cs" />
     <Compile Include="View\MainView.cs">
       <SubType>Form</SubType>
@@ -58,7 +60,7 @@
     <Compile Include="View\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\LivingCreatures.cs" />
+    <Compile Include="Model\LivingThings\LivingCreatures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
