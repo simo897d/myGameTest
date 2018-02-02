@@ -35,7 +35,7 @@ namespace myGameTest {
             
         }
 
-        private void RTB_Inventory_TextChanged(object sender, EventArgs e) {
+        private void dgv_Inventory_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
         }
     }

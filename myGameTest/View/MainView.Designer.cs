@@ -35,7 +35,8 @@ namespace myGameTest {
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.RTB_Inventory = new System.Windows.Forms.RichTextBox();
+            this.dgv_Inventory = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_HitPointsText
@@ -141,22 +142,33 @@ namespace myGameTest {
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // RTB_Inventory
+            // dgv_Inventory
             // 
-            this.RTB_Inventory.Location = new System.Drawing.Point(744, 24);
-            this.RTB_Inventory.Name = "RTB_Inventory";
-            this.RTB_Inventory.ReadOnly = true;
-            this.RTB_Inventory.Size = new System.Drawing.Size(177, 276);
-            this.RTB_Inventory.TabIndex = 11;
-            this.RTB_Inventory.Text = "";
-            this.RTB_Inventory.TextChanged += new System.EventHandler(this.RTB_Inventory_TextChanged);
+            this.dgv_Inventory.AccessibleName = "Inventory";
+            this.dgv_Inventory.AllowUserToAddRows = false;
+            this.dgv_Inventory.AllowUserToDeleteRows = false;
+            this.dgv_Inventory.AllowUserToResizeColumns = false;
+            this.dgv_Inventory.AllowUserToResizeRows = false;
+            this.dgv_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Inventory.EnableHeadersVisualStyles = false;
+            this.dgv_Inventory.Location = new System.Drawing.Point(679, 18);
+            this.dgv_Inventory.Name = "dgv_Inventory";
+            this.dgv_Inventory.ReadOnly = true;
+            this.dgv_Inventory.RowHeadersVisible = false;
+            this.dgv_Inventory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_Inventory.RowTemplate.Height = 20;
+            this.dgv_Inventory.RowTemplate.ReadOnly = true;
+            this.dgv_Inventory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Inventory.Size = new System.Drawing.Size(240, 297);
+            this.dgv_Inventory.TabIndex = 11;
+            this.dgv_Inventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Inventory_CellContentClick);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 682);
-            this.Controls.Add(this.RTB_Inventory);
+            this.Controls.Add(this.dgv_Inventory);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -169,6 +181,7 @@ namespace myGameTest {
             this.Controls.Add(this.Lbl_HitPointsText);
             this.Name = "MainView";
             this.Text = "MainViewModel";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,13 +199,14 @@ namespace myGameTest {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private RichTextBox RTB_Inventory;
+        private DataGridView dgv_Inventory;
 
         public MainView() {
             InitializeComponent();
-            //Lbl_HitPointsHealth.DataBindings.Add("Text", viewModel.CurrentPlayer(), "CurrentHitPoints");
-            RTB_Inventory.DataBindings.Add("Text", viewModel.CurrentPlayer(), "itemID");
+            Lbl_HitPointsHealth.DataBindings.Add("Text", viewModel.CurrentPlayer(), "CurrentHitPoints");
+            dgv_Inventory.DataSource = viewModel.CurrentPlayer().ListOfInventory;
             
+
         }
 
     }
