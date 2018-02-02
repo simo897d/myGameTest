@@ -10,6 +10,7 @@ namespace myGameTest {
     public class ViewModel {
 
         private Player _player;
+        private Monster _monster;
         public Player CurrentPlayer() {
             if (_player == null) {
                 _player = Player.DefaultPlayer();
@@ -17,6 +18,12 @@ namespace myGameTest {
                 //Read from file
             }
             return _player;
+        }
+        public Monster SetMonster { get { return _monster; } set { _monster = value; } }
+
+        public Monster MonsterEncounter() {
+            _monster = Monster.Slime();
+            return _monster;
         }
 
         public ViewModel() {
@@ -26,7 +33,7 @@ namespace myGameTest {
         public string DidDamage() {
             string output;
 
-            output = "You did" + CurrentPlayer().DoDamage().ToString() + " Damage \n";
+            output = "You did " + CurrentPlayer().DoDamage().ToString() + " damage to" + MonsterEncounter().CreatureName + "\n";
 
             return output;
         }

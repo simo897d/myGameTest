@@ -13,7 +13,7 @@ namespace myGameTest.Model {
         public Weapons CurrentWeapon { get { return _weapon; } set { _weapon = value; } }
         public BindingList<InventoryItem> ListOfInventory { get; set; }
         
-        public Player(int currentHitPoints, int maxHitPoints, Weapons equippedWep) : base(currentHitPoints, maxHitPoints) {
+        public Player(int currentHitPoints, int maxHitPoints, string creatureName, Weapons equippedWep) : base(currentHitPoints, maxHitPoints, creatureName) {
             ListOfInventory = new BindingList<InventoryItem>();
             CurrentWeapon = equippedWep;
             }
@@ -37,7 +37,7 @@ namespace myGameTest.Model {
             CurrentWeapon = Swords.WoodenSword();
         }
         public static Player DefaultPlayer() {
-            Player defPlayer = new Player(100, 100, Swords.WoodenSword());
+            Player defPlayer = new Player(100, 100, "PlayerName", Swords.WoodenSword()); //Replace playername with string to set Playername
             
             defPlayer.ListOfInventory.Add(Swords.WoodenSword());
             return  defPlayer;
