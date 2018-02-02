@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace myGameTest {
     public partial class MainView : Form {
-        ViewModel viewModel = new ViewModel();
+        private ViewModel viewModel = new ViewModel();
         //public MainView() {
         //    InitializeComponent();
         //}
