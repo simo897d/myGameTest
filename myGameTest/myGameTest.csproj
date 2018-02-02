@@ -51,6 +51,8 @@
     <Compile Include="Model\Items\Weapons.cs" />
     <Compile Include="Model\LivingThings\Monster.cs" />
     <Compile Include="Model\LivingThings\Player.cs" />
+    <Compile Include="Model\MapNLocations\GenericMap.cs" />
+    <Compile Include="Model\MapNLocations\MapForWorldOne.cs" />
     <Compile Include="Model\MapNLocations\PlayerMovement.cs" />
     <Compile Include="Model\MapNLocations\TownCenter.cs" />
     <Compile Include="TempData\TempDatabase.cs" />

@@ -37,7 +37,9 @@ namespace myGameTest {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgv_Inventory = new System.Windows.Forms.DataGridView();
             this.RTB_Map = new System.Windows.Forms.RichTextBox();
+            this.dgv_Test = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Test)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_HitPointsText
@@ -173,11 +175,20 @@ namespace myGameTest {
             this.RTB_Map.TabIndex = 12;
             this.RTB_Map.Text = "";
             // 
+            // dgv_Test
+            // 
+            this.dgv_Test.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Test.Location = new System.Drawing.Point(382, 406);
+            this.dgv_Test.Name = "dgv_Test";
+            this.dgv_Test.Size = new System.Drawing.Size(240, 150);
+            this.dgv_Test.TabIndex = 13;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 682);
+            this.Controls.Add(this.dgv_Test);
             this.Controls.Add(this.RTB_Map);
             this.Controls.Add(this.dgv_Inventory);
             this.Controls.Add(this.richTextBox1);
@@ -193,6 +204,7 @@ namespace myGameTest {
             this.Name = "MainView";
             this.Text = "MainViewModel";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Test)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,10 +227,11 @@ namespace myGameTest {
 
         public MainView() {
             InitializeComponent();
-            Lbl_HitPointsHealth.DataBindings.Add("Text", viewModel.CurrentPlayer(), "CurrentHitPoints");
+            Lbl_HitPointsHealth.DataBindings.Add(new Binding("Text", viewModel.CurrentPlayer(), "CurrentHitPoints"));
             dgv_Inventory.DataSource = viewModel.CurrentPlayer().ListOfInventory;
-
+            //RTB_Map.DataBindings.Add(new Binding("Text", viewModel.StartingZone(), "MapBindingStart"));
         }
 
+        private DataGridView dgv_Test;
     }
 }
